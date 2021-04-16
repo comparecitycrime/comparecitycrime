@@ -1,5 +1,5 @@
 ---
 layout: home
 title: "Sydney"
-permalink: /https://aolifodaisy.github.io/comparecrimechange.github.io/Sydney/
+permalink: /https://comparecitycrime.github.io/covidimpact/Sydney/
 ---
