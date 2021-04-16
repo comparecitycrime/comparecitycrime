@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "London"
-permalink: /https://aolifodaisy.github.io/comparecrimechange.github.io/London/
+permalink: /https://comparecitycrime.github.io/covidimpact/London/
 ---
 
 London is the capital city of the United kingdom.
