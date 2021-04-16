@@ -1,5 +1,5 @@
 ---
 layout: home
 title: "Hong Kong"
-permalink: /https://aolifodaisy.github.io/comparecrimechange.github.io/HongKong/
+permalink: /https://comparecitycrime.github.io/covidimpact/HongKong/
 ---
