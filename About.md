@@ -1,7 +1,7 @@
 ---
 layout: home
 title: "About"
-permalink: /https://github.com/comparecitycrime/covidimpact/blob/caca88a9633adbe6fb756272221e7ae00805de4e/About.md
+permalink: https://github.com/comparecitycrime/covidimpact/blob/caca88a9633adbe6fb756272221e7ae00805de4e/About.md
 ---
 
 ## This is the project page on "Covid-19 Impacts on Crime Changes in 4 Cities in 2020"
