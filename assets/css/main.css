@@ -3411,6 +3411,13 @@ input, select, textarea {
 
 /* Intro */
 
+/* Added by Raphael for Compare City Crime */
+	#intro .ccc_logo {
+		border: 0;
+		position: relative;
+		width: 12em;
+	}
+
 	#intro .logo {
 		border-bottom: 0;
 		display: inline-block;
