@@ -2351,10 +2351,22 @@ input, select, textarea {
 				width: 100%;
 			}
 
+		/* Addition for inline images by Raphael */
+		.image.inline {
+			margin: 0 0 2em 0;
+			width: 100%;
+			text-align: center;
+		}
+		.image.inline img {
+			width: 70%
+		}
 			@media screen and (max-width: 736px) {
 
 				.image.featured {
 					margin: 0 0 1.5em 0;
+				}
+				.image.inline img {
+					width: 100%
 				}
 
 			}
