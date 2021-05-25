@@ -2353,20 +2353,24 @@ input, select, textarea {
 
 		/* Addition for inline images by Raphael */
 		.image.inline {
-			margin: 0 0 2em 0;
+			margin: 0 0 1em 0;
 			width: 100%;
 			text-align: center;
+			display: inline-block;
 		}
-		.image.inline img {
-			width: 70%
-		}
+			.image.inline img {
+				width: 70%;
+				display: inline-block;
+			}
+
 			@media screen and (max-width: 736px) {
 
 				.image.featured {
 					margin: 0 0 1.5em 0;
 				}
 				.image.inline img {
-					width: 100%
+					width: 100%;
+					display: inline-block;
 				}
 
 			}
