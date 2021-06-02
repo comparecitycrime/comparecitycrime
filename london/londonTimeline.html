@@ -16,8 +16,6 @@
     <script type="text/javascript" src="./d3.min.js"></script>
     <script>
         $(function () {
-            $("#header").load("../header.html");
-            $("#menu").load("../menu.html");
             $("#footer").load("../footer.html");
         });
     </script>
@@ -35,9 +33,73 @@
 <div id="wrapper">
 
     <!-- Header -->
-    <header id="header"></header>
+    <header id="header">
+        <h1><a href="../index.html">COVID-19 and Crime</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../london.html">London</a></li>
+                <li><a href="../new_york.html">New York</a></li>
+                <li><a href="../sydney.html">Sydney</a></li>
+                <li><a href="../hong_kong.html">Hong Kong</a></li>
+                <li><a href="../compare.html">Comparative Studies</a></li>
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <!-- Menu -->
-    <section id="menu"></section>
+    <section id="menu">
+        <nav style="text-align:right;">
+            <a class="button" href="#menu">Close</a>
+        </nav>
+        <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="../about.html">
+                        <h3>About</h3>
+                        <p>More about the Study</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../london.html">
+                        <h3>London</h3>
+                        <p>London Context and Crime Change</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../new_york.html">
+                        <h3>New York</h3>
+                        <p>New York Context and Crime Change</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../sydney.html">
+                        <h3>Sydney</h3>
+                        <p>Sydney Context and Crime Change</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../hong_kong.html">
+                        <h3>Hong Kong</h3>
+                        <p>Hong Kong Context and Crime Change</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="../compare.html">
+                        <h3>Comparative Studies</h3>
+                        <p>Comparison between cities</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </section>
     <!-- Main -->
     <div id="main">
 
