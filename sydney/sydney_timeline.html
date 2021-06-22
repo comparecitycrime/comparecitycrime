@@ -7,11 +7,11 @@
 -->
 <html lang="en">
 <head>
-    <title>Visualising London's COVID-19 Lockdowns | Covid-19 Impacts on Crime Changes in Cities</title>
+    <title>Visualising Sydney's COVID-19 Lockdowns | Covid-19 Impacts on Crime Changes in Cities</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../assets/css/main.css"/>
-    <link rel="stylesheet" href="./london_lockdown_style.css"/>
+    <link rel="stylesheet" href="./sydney_lockdown_style.css"/>
     <script src="../assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="../d3.min.js"></script>
     <script>
@@ -107,20 +107,20 @@
         <article class="post">
             <header>
                 <div class="title">
-                    <h2>Visualising London's Covid-19 Lockdowns</h2>
+                    <h2>Visualising Sydney's Covid-19 Lockdowns</h2>
                     <p>Visualisation</p>
                 </div>
                 <div class="meta">
-                    <time class="published" datetime="2021-06-01">June 1, 2021</time>
+                    <time class="published" datetime="2021-06-01">June 22, 2021</time>
                     <a href="https://linkedin.com/in/raphael-canty" class="author"><span
                             class="name">Raphael Canty</span><!--<img src="images/yijing.jpg" alt=""/>--></a>
                 </div>
             </header>
-            <p> Visualising lockdown events alongside daily new cases of Covid-19 reveals the cause and effect of London's public health response. This interactive visualisation was created using <a href="https://d3js.org">d3.js</a>, displaying London's daily new cases and deaths over time against the approximate level of lockdown restrictions.</p>
-            <p> Hover over the line chart to see exact numbers of cases and deaths. Click on the dots at the bottom to highlight events and see their details below. Events include milestones of London's and the UK's response to coronavirus, especially in terms of transport.</p>
+            <p>After creating a Covid-19 timeline <a href="../london/londonTimeline.html">for London</a>, we're expanding the idea to the other cities of this project. Created using <a href="https://d3js.org">d3.js</a>, this interactive vidualisation displays Sydney's daily new cases over time, against the approximate level of lockdown restrictions and events detailing the changing situation.</p>
+            <p>Hover over the line chart to see exact numbers of cases. The hollow dots represent events, such as important decisions and milestones in Sydney and Australia's coronavirus response. Click on them to see more.</p>
 
-            <div id="londonTimeline" style="text-align: center;"></div>
-            <script type="text/javascript" src="./london_timeline.js"></script>
+            <div id="sydneyTimeline" style="text-align: center;"></div>
+            <script type="text/javascript" src="./sydney_timeline.js"></script>
             <div class="eventInfo">
                 <p><b><span id="eventDate"></span></b>
                     <span id="eventDesc">Click on an event above to view information</span>
@@ -128,14 +128,8 @@
                     <a id="eventURL" href=""></a></p>
             </div>
 
-            <p>London COVID-19 cases and deaths data from the UK Government's API at <a href="https://coronavirus.data.gov.uk/">https://coronavirus.data.gov.uk/</a>. Lockdown level is an indication only, determined by the author based on the lockdown restrictions in London and should not to be confused with the UK Government's COVID-19 alert level system. Events were collated from multiple sources, including <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_the_United_Kingdom_(January–June_2020)">Wikipedia</a> and <a href="https://tfl.gov.uk/info-for/media/press-releases/">TfL Press releases</a>. Examples from <a href="https://bl.ocks.org/d3noob">d3noob</a> were helpful for creating the visualisation.</p>
-            <p>A previous version of this visualisation concept is available as a pair of static images below. They use <a href="https://coronavstats.co.uk/england/localData">https://coronavstats.co.uk/england/localData</a> as a backing column chart.</p>
-                <a href="../images/London_Timeline_1.jpeg" class="image inline">
-                    <img src="../images/London_Timeline_1.jpeg" alt="London lockdown timeline part 1">
-                </a>
-                <a href="../images/London_Timeline_2.jpeg" class="image inline">
-                    <img src="../images/London_Timeline_2.jpeg" alt="London lockdown timeline part 2">
-                </a>
+            <p>Sydney's lockdown is more complex than London's, and rather than a few strong and well-defined lockdowns, it experienced a smaller first wave and smaller subsequent ourbreaks which were dealt with locally rather than requiring full lockdowns. Restrictions are enacted by states in Australia, and for example Victoria experienced far worse lockdown conditions for their second wave than New South Wales or any other state or territory.</p>
+            <p>Sydney's COVID-19 cases data are from <a href="https://data.nsw.gov.au/nsw-covid-19-data">NSW Health</a>. Lockdown level is an indication only, determined by the author based on the lockdown restrictions in Sydney/New South Wales. Events were collated from multiple sources, including <a href="https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_Australia">Wikipedia</a> and <a href="https://www.nsw.gov.au/media-releases">NSW Government Media Releases</a>. Examples from <a href="https://bl.ocks.org/d3noob">d3noob</a> were helpful for creating the visualisation.</p>
         </article>
 
     </div>
