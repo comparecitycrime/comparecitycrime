@@ -3,11 +3,11 @@
 	Future Imperfect by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-	Adapted by Raphael Canty
+	Adapted by Emily Wu
 -->
 <html lang="en">
 <head>
-    <title>Visualising New York's COVID-19 Lockdowns | Covid-19 Impacts on Crime Changes in Cities</title>
+    <title>Visualising Hong Kong's's COVID-19 Lockdowns | Covid-19 Impacts on Crime Changes in Cities</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../assets/css/main.css"/>
@@ -107,7 +107,7 @@
         <article class="post">
             <header>
                 <div class="title">
-                    <h2>Visualising New York's Covid-19 Lockdowns</h2>
+                    <h2>Visualising Hong Kong's Covid-19 Lockdowns</h2>
                     <p>Visualisation</p>
                 </div>
                 <div class="meta">
@@ -116,18 +116,19 @@
                             class="name">Emily Wu</span><!--<img src="images/yijing.jpg" alt=""/>--></a>
                 </div>
             </header>
-            <p>Following the Covid-19 timelines for <a href="../london/london_timeline.html">London</a> and 
-            <a href="../sydney/sydney_timeline.html">Sydney</a>, we expanded the data visualisation to New York State. 
-            Created using <a href="https://d3js.org">d3.js</a>, this interactive visualisation shows New York State's daily 
+            <p>Following the Covid-19 timelines for <a href="../london/london_timeline.html">London</a>, 
+            <a href="../sydney/sydney_timeline.html">Sydney</a>, and <a href="../newyork/newyork_timeline.html">New York</a>, 
+            we expanded the data visualisation to Hong Kong. 
+            Created using <a href="https://d3js.org">d3.js</a>, this interactive visualisation shows Hong Kong's daily 
             new cases and deaths over time, against the approximate level of lockdown restrictions and events detailing the changing situation.
             </p>
 
             <p>Hover over the line chart to see exact numbers of cases. The hollow dots represent events, such as important decisions and 
-            milestones in New York State's coronavirus response. Click on them to see more.
+            milestones in Hong Kong's coronavirus response. Click on them to see more.
             </p>
 
-            <div id="newyorkTimeline" style="text-align: center;"></div>
-            <script type="text/javascript" src="./newyork_timeline.js"></script>
+            <div id="hongkongTimeline" style="text-align: center;"></div>
+            <script type="text/javascript" src="./hongkong_timeline.js"></script>
             <div class="eventInfo">
                 <p><b><span id="eventDate"></span></b>
                     <span id="eventDesc">Click on an event above to view information</span>
@@ -135,36 +136,21 @@
                     <a id="eventURL" href=""></a></p>
             </div>
 
-            <p>New York's lockdown is a bit more complex and difficult to quantify into levels than London.
-            The state government started off with the New York State on Pause program, a statewide lockdown.
-            Restrictions then began to ease on a county by county basis, using the newly proposed four-phase reopening
-            plan. Counties could move from phase 1 to phase 4, with each phase having less restrictions than the last, provided
-            they met the necessary metrics for declining hospitalisations and deaths. Restrictions became even more localised following 
-            the micro-clustering strategy which would place new restrictions in cluster areas that had spikes in COVID-19 cases.
+            <p>Hong Kong's approach, much like New York's, was fairly difficult to quantify into levels. 
+            Hong Kong implemented a range of policies and restrictions throughout late January 2020 - the present 
+            which involved closing borders, limiting public gatherings up to a given number of people, getting civil servants to work 
+            from home, and many other policies. From late January 2021 Hong Kong began to implement sudden lockdowns that 
+            targeted smaller areas to conduct mandatory testing. These were localised and short lived lockdowns but of the highest intensity.
             </p>
 
-            <p>The New York COVID-19 case data was from the <a href="https://github.com/CSSEGISandData/COVID-19">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>. 
-            There were a few pieces of anomalous data that we found, these pieces of data were replaced using the values found from the <a href="https://www.nytimes.com/interactive/2021/us/new-york-covid-cases.html">New York Times Interactive Covid Map</a>. 
-            We looked into the anomalous dates and found that they are likely due to the reasons listed below:
-                <ul>
-                    <li>June 30th 2020: New York City added a backlog of deaths from unspecified dates.</li>
-                    <li>August 20th 2020: New York City removed four previously reported deaths after reviewing records. The state reported four new deaths in other counties.</li>
-                    <li>September 19th 2020: The values we found were initially negative so we checked the <a href="https://www.nytimes.com/interactive/2021/us/new-york-covid-cases.html">New York Times Interactive Covid Map</a> 
-                    and its respective <a href="https://github.com/nytimes/covid-19-data">github</a> only to find another negative value.
-                    We finally checked the <a href="https://health.data.ny.gov/Health/New-York-State-Statewide-COVID-19-Fatalities-by-Co/xymy-pny5">New York State COVID-19 Fatalities by County dataset</a>
-                    which yielded a non-negative result.
-                    </li>
-                    <li>March 24th 2021: After a multiday disruption in reporting data, the New York City health department reported several days’ 
-                    worth of data, leading to a spike in reported cases and deaths in New York State.
-                    </li>
-                </ul>  
+            <p>The Hong Kong COVID-19 case data was from the
+            <a href="https://github.com/CSSEGISandData/COVID-19">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>. 
             </p>
 
-            <p>
-            Lockdown level is an indication only, determined by the author based on the lockdown restrictions in New York. 
+            <p>Lockdown level is an indication only, determined by the author based on the lockdown restrictions in Hong Kong. 
             Events were collated from multiple sources, including 
-            <a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_in_New_York_(state)">Wikipedia</a> and 
-            <a href="https://www.governor.ny.gov/news">New York State Governors Pressroom</a>. 
+            <a href="https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Hong_Kong">Wikipedia</a> and 
+            <a href="https://www.info.gov.hk/gia/general/today.htm">Hong Kong's Press Release site</a>. 
             Examples from <a href="https://bl.ocks.org/d3noob">d3noob</a> were helpful for creating the visualisation.</p>
         </article>
 
