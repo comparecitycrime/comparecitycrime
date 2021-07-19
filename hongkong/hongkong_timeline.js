@@ -31,8 +31,8 @@ var deathsLine = d3.line()
 var svg = d3.select("#hongkongTimeline").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 svg.append("text").attr("class","title").attr("x",width/2).attr("y",-10).text("Hong Kong COVID-19 Timeline");
 
@@ -53,7 +53,7 @@ legend.append("circle").attr("cx",width-67).attr("cy",155).attr("r",6).style("fi
 legend.append("text").attr("class","legend").attr("x",width-80).attr("y",160).text("Event: click on");
 legend.append("text").attr("class","legend").attr("x",width-10).attr("y",160).text("for more");
 
-Promise.all([d3.csv("./hongkong_covid_stats.csv"), d3.csv("./hongkong_lockdown_level.csv"), d3.csv("./hongkong_covid_events.csv")])
+Promise.all([d3.csv("hongkong_covid_stats.csv"), d3.csv("hongkong_lockdown_level.csv"), d3.csv("hongkong_covid_events.csv")])
     .then(function (data) {
         data[0].forEach(function (d) {
             //return {date: parseTime(d.date), cases:+d.cases, deaths:+d.deaths};
@@ -80,22 +80,46 @@ Promise.all([d3.csv("./hongkong_covid_stats.csv"), d3.csv("./hongkong_lockdown_l
         svg.append("g").selectAll("rect")
             .data(data[1])
             .enter().append("rect")
-                .attr("class", (d) => "level" + d.level )
-                .attr("x", (d) => x(d.dateFrom) )
-                .attr("y", height)
-                .attr("width", (d) => x(d.dateTo) - x(d.dateFrom) )
-                .attr("height", tickHeight);
+            .attr("class", (d) => "level" + d.level )
+            .attr("x", (d) => x(d.dateFrom) )
+            .attr("y", height)
+            .attr("width", (d) => x(d.dateTo) - x(d.dateFrom) )
+            .attr("height", tickHeight);
+
+        svg.append("g")
+            .selectAll("rect")
+            .data(data[0].filter( (d) => d.deaths ))
+            .enter().append("rect")
+            .attr("class", "deaths")
+            .attr("x", (d) => x(d.date)-1)
+            .attr("y", (d) => yDeaths(d.deaths))
+            .attr("width", 2)
+            .attr("height", (d) => height - yDeaths(d.deaths));
 
         // Add the lines path.
         svg.append("path")
             .data([data[0]])
             .attr("class", "line cases")
             .attr("d", casesLine);
+
+        // Deaths with circle
+/*        svg.append("g")
+            .selectAll("circle")
+            .data(data[0].filter( (d) => d.deaths ))
+            .enter().append("circle")
+            .attr("class", "deaths")
+            .style("fill", "darkred")
+            .attr("cx", (d) => x(d.date))
+            .attr("cy", (d) => yDeaths(d.deaths))
+            .attr("r", 3);
+*/
+        // Deaths with line
+/*
         svg.append("path")
             .data([data[0]])
             .attr("class", "line deaths")
             .attr("d", deathsLine);
-
+*/
         // Add the x Axis
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
@@ -105,24 +129,24 @@ Promise.all([d3.csv("./hongkong_covid_stats.csv"), d3.csv("./hongkong_lockdown_l
         svg.append("g")
             .attr("class", "axis cases")
             .call(d3.axisLeft(yCases))
-                .append("text")
-                .attr("class", "label")
-                .attr("transform", "rotate(-90)")
-                .attr("y", -margin.left)
-                .attr("x", -(height / 2))
-                .attr("dy", "1em")
-                .text("New Covid cases per day");
+            .append("text")
+            .attr("class", "label")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left)
+            .attr("x", -(height / 2))
+            .attr("dy", "1em")
+            .text("New Covid cases per day");
         svg.append("g")
             .attr("class", "axis deaths")
             .attr("transform", "translate("+width+",0)")
-            .call(d3.axisRight(yDeaths))
-                .append("text")
-                .attr("class", "label")
-                .attr("transform", "rotate(90)")
-                .attr("y", -margin.right)
-                .attr("x", (height / 2))
-                .attr("dy", "0.75em")
-                .text("New Covid deaths per day");
+            .call(d3.axisRight(yDeaths).ticks(d3.max(data[0], (d) => d.deaths )))
+            .append("text")
+            .attr("class", "label")
+            .attr("transform", "rotate(90)")
+            .attr("y", -margin.right)
+            .attr("x", (height / 2))
+            .attr("dy", "0.75em")
+            .text("New Covid deaths per day");
 
         // Add featured event lines
         svg.append("g").selectAll("line")
@@ -144,11 +168,11 @@ Promise.all([d3.csv("./hongkong_covid_stats.csv"), d3.csv("./hongkong_lockdown_l
         svg.append("g").attr("class","eventCircles").selectAll("circle.event")
             .data(data[2])
             .enter().append("circle")
-                .attr("class", (d) => ("event " + shortFormatDate(d.date)) )
-                .attr("cx", (d) => x(d.date) )
-                .attr("cy", height + (tickHeight/2)) //(i % 2 ? height+11 : height+23) )
-                .attr("r", (d) => d.featured ? 5 : 3 )
-                .style("fill", "black");
+            .attr("class", (d) => ("event " + shortFormatDate(d.date)) )
+            .attr("cx", (d) => x(d.date) )
+            .attr("cy", height + (tickHeight/2)) //(i % 2 ? height+11 : height+23) )
+            .attr("r", (d) => d.featured ? 5 : 3 )
+            .style("fill", "black");
         d3.select("g.eventCircles").selectAll("circle.selection")
             .data(data[2])
             .enter().append("circle")
