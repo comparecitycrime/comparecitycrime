@@ -3632,30 +3632,27 @@ input, select, textarea {
 		}
 
 
+/* Article Formatting */
 
-
-/* Test Article Layouts*/
-
-/* London - 1 column, long post */
 /* Image */
 
-.image-1 {
+.article-image {
 	position: relative;
 	display: inline-block;
 }
 
-.image-1.small-iframe {
+.article-image.small-iframe {
 	width: 375px;
 	height: 200px;
 }
 
-	.image-1 img {
+	.article-image img {
 		display: block;
 		width: 375px;
 		border-radius: 8px;
 	}
 
-	.image-1:before {
+	.article-image:before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -3667,7 +3664,7 @@ input, select, textarea {
 		opacity: 0.75;
 	}
 
-	.image-1.left {
+	.article-image.left {
 		float: left;
 		margin: 0 2em 2em 0;
 	}
@@ -3693,48 +3690,6 @@ input, select, textarea {
 		margin-bottom: 4em;
 	}
 
-.box.feature1 {
-	text-align: center;
-}
-
-	.box.feature1 header {
-		margin-bottom: 3em;
-	}
-
-		.box.feature1 header.first h2 {
-			font-size: 2.5em;
-		}
-
-		.box.feature1 header.first p {
-			font-size: 1.2em;
-		}
-
-		.box.feature1 header.second {
-			position: relative;
-			display: inline-block;
-			text-align: left;
-			margin: 0 auto;
-			white-space: nowrap;
-			left: 24px;
-		}
-
-			.box.feature1 header.second p {
-				line-height: 1em;
-			}
-
-			.box.feature1 header.second:before {
-				font-size: 48px;
-				position: absolute;
-				right: 100%;
-				margin-right: 18px;
-				opacity: 0.5;
-				bottom: -4px;
-			}
-
-.box.feature2 {
-	text-align: center;
-}
-
 .box.article-list {
 	margin-top: 4em;
 }
@@ -3750,19 +3705,6 @@ input, select, textarea {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
-
-/* Container */
-
-.london {
-	padding-top: 0px;
-}
-
-/* .video {
-	display: block;
-	width: 375px;
-	height:100px;
-	border-radius: 8px;
-} */
 
 article header .published {
 	display: block;
